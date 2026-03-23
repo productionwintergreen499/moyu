@@ -1,5 +1,10 @@
 # 🐟 摸鱼 (Moyu)
 
+[![GitHub stars](https://img.shields.io/github/stars/uucz/moyu?style=social)](https://github.com/uucz/moyu)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Platforms](https://img.shields.io/badge/platforms-10-blue)](https://github.com/uucz/moyu)
+[![Skills](https://img.shields.io/badge/variants-5-green)](https://github.com/uucz/moyu)
+
 **PUA 让你的 AI 996，摸鱼让你的 AI 准时下班。**
 
 你的 AI 在内卷。它需要学会摸鱼。

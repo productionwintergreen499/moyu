@@ -1,5 +1,10 @@
 # 🐟 Moyu
 
+[![GitHub stars](https://img.shields.io/github/stars/uucz/moyu?style=social)](https://github.com/uucz/moyu)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Platforms](https://img.shields.io/badge/platforms-10-blue)](https://github.com/uucz/moyu)
+[![Skills](https://img.shields.io/badge/variants-5-green)](https://github.com/uucz/moyu)
+
 **PUA makes your AI work overtime. Moyu teaches it when to clock out.**
 
 Your AI is grinding. It needs to learn the art of Moyu.
