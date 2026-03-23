@@ -141,6 +141,27 @@ curl -o .codebuddy/skills/moyu/SKILL.md https://raw.githubusercontent.com/uucz/m
 
 ---
 
+## Usage
+
+After installation, Moyu **works automatically** — it activates when over-engineering patterns are detected. No manual action needed.
+
+You can also activate it manually:
+
+| Platform | Command |
+|----------|---------|
+| Claude Code | `/moyu` |
+| Cursor | `@moyu` in chat, or set `alwaysApply: true` |
+| Codex CLI | Auto-active (skill loaded) |
+| VSCode / Copilot | Auto-active (instructions loaded) |
+| Windsurf | Auto-active (`trigger: model_decision`) |
+| Cline | Auto-active (rules loaded) |
+| Kiro | Auto-active (`inclusion: auto`) |
+| CodeBuddy | Auto-active (skill loaded) |
+
+> **Tip**: Moyu and PUA can be installed together — they don't conflict. PUA sets the floor, Moyu sets the ceiling.
+
+---
+
 ## Works with PUA
 
 Moyu and [PUA](https://github.com/tanweai/pua) solve opposite problems:

@@ -143,6 +143,27 @@ curl -o .codebuddy/skills/moyu/SKILL.md https://raw.githubusercontent.com/uucz/m
 
 ---
 
+## 使用
+
+安装后，摸鱼会**自动生效**——当 AI 出现过度工程倾向时自动激活，不需要手动操作。
+
+你也可以随时手动激活：
+
+| 平台 | 命令 |
+|------|------|
+| Claude Code | `/moyu` |
+| Cursor | 在对话中 `@moyu` 或设置为 `alwaysApply: true` |
+| Codex CLI | 自动生效（skill 已加载） |
+| VSCode / Copilot | 自动生效（instructions 已加载） |
+| Windsurf | 自动生效（`trigger: model_decision`） |
+| Cline | 自动生效（规则已加载） |
+| Kiro | 自动生效（`inclusion: auto`） |
+| CodeBuddy | 自动生效（skill 已加载） |
+
+> **提示**：摸鱼和 PUA 可以同时安装，互不冲突。PUA 管下限，摸鱼管上限。
+
+---
+
 ## 与 PUA 搭配使用
 
 摸鱼和 [PUA](https://github.com/tanweai/pua) 解决的是相反的问题：
