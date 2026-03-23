@@ -4,6 +4,10 @@
 
 你的 AI 在内卷。它需要学会摸鱼。
 
+```bash
+claude skill install --url https://github.com/uucz/moyu --skill moyu
+```
+
 [English](./README.en.md) | 中文
 
 ---
@@ -76,14 +80,23 @@
 
 ## 安装
 
-### Claude Code
+### Claude Code / Codex CLI / Kiro / CodeBuddy / Google Antigravity / OpenCode
 
 ```bash
-# 中文版
+# 中文版（标准）
 claude skill install --url https://github.com/uucz/moyu --skill moyu
 
 # English
 claude skill install --url https://github.com/uucz/moyu --skill moyu-en
+
+# 日本語
+claude skill install --url https://github.com/uucz/moyu --skill moyu-ja
+
+# 轻量版（只保留三条铁律 + 对比表）
+claude skill install --url https://github.com/uucz/moyu --skill moyu-lite
+
+# 严格版（L1 就停下确认，适合团队强制执行）
+claude skill install --url https://github.com/uucz/moyu --skill moyu-strict
 ```
 
 或手动复制 `skills/moyu/SKILL.md` 到你的项目 `.claude/skills/moyu/SKILL.md`
@@ -151,7 +164,7 @@ curl -o .codebuddy/skills/moyu/SKILL.md https://raw.githubusercontent.com/uucz/m
 
 | 平台 | 命令 |
 |------|------|
-| Claude Code | `/moyu` |
+| Claude Code | `/moyu`、`/moyu-lite`、`/moyu-strict` |
 | Cursor | 在对话中 `@moyu` 或设置为 `alwaysApply: true` |
 | Codex CLI | 自动生效（skill 已加载） |
 | VSCode / Copilot | 自动生效（instructions 已加载） |
@@ -159,6 +172,18 @@ curl -o .codebuddy/skills/moyu/SKILL.md https://raw.githubusercontent.com/uucz/m
 | Cline | 自动生效（规则已加载） |
 | Kiro | 自动生效（`inclusion: auto`） |
 | CodeBuddy | 自动生效（skill 已加载） |
+| Google Antigravity | 自动生效（skill 已加载） |
+| OpenCode | 自动生效（skill 已加载） |
+
+### Skill 变体
+
+| 变体 | 定位 | 安装 |
+|------|------|------|
+| `moyu` | 标准版（中文） | `--skill moyu` |
+| `moyu-en` | 标准版（English） | `--skill moyu-en` |
+| `moyu-ja` | 標準版（日本語） | `--skill moyu-ja` |
+| `moyu-lite` | 轻量版，只保留核心规则 | `--skill moyu-lite` |
+| `moyu-strict` | 严格版，L1 就停下确认 | `--skill moyu-strict` |
 
 > **提示**：摸鱼和 PUA 可以同时安装，互不冲突。PUA 管下限，摸鱼管上限。
 
@@ -190,6 +215,8 @@ curl -o .codebuddy/skills/moyu/SKILL.md https://raw.githubusercontent.com/uucz/m
 | Cline | ✅ |
 | Kiro (AWS) | ✅ |
 | CodeBuddy (Tencent) | ✅ |
+| Google Antigravity | ✅ |
+| OpenCode | ✅ |
 
 ---
 

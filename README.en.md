@@ -4,6 +4,10 @@
 
 Your AI is grinding. It needs to learn the art of Moyu.
 
+```bash
+claude skill install --url https://github.com/uucz/moyu --skill moyu-en
+```
+
 English | [中文](./README.md)
 
 ---
@@ -76,14 +80,23 @@ They complement each other.
 
 ## Install
 
-### Claude Code
+### Claude Code / Codex CLI / Kiro / CodeBuddy / Google Antigravity / OpenCode
 
 ```bash
-# English
+# English (standard)
 claude skill install --url https://github.com/uucz/moyu --skill moyu-en
 
 # Chinese
 claude skill install --url https://github.com/uucz/moyu --skill moyu
+
+# 日本語
+claude skill install --url https://github.com/uucz/moyu --skill moyu-ja
+
+# Lite (three iron rules + comparison table only)
+claude skill install --url https://github.com/uucz/moyu --skill moyu-lite
+
+# Strict (stops at L1 for confirmation, for team enforcement)
+claude skill install --url https://github.com/uucz/moyu --skill moyu-strict
 ```
 
 Or manually copy `skills/moyu-en/SKILL.md` to `.claude/skills/moyu/SKILL.md`
@@ -149,7 +162,7 @@ You can also activate it manually:
 
 | Platform | Command |
 |----------|---------|
-| Claude Code | `/moyu` |
+| Claude Code | `/moyu`, `/moyu-lite`, `/moyu-strict` |
 | Cursor | `@moyu` in chat, or set `alwaysApply: true` |
 | Codex CLI | Auto-active (skill loaded) |
 | VSCode / Copilot | Auto-active (instructions loaded) |
@@ -157,6 +170,18 @@ You can also activate it manually:
 | Cline | Auto-active (rules loaded) |
 | Kiro | Auto-active (`inclusion: auto`) |
 | CodeBuddy | Auto-active (skill loaded) |
+| Google Antigravity | Auto-active (skill loaded) |
+| OpenCode | Auto-active (skill loaded) |
+
+### Skill Variants
+
+| Variant | Purpose | Install |
+|---------|---------|---------|
+| `moyu` | Standard (Chinese) | `--skill moyu` |
+| `moyu-en` | Standard (English) | `--skill moyu-en` |
+| `moyu-ja` | Standard (Japanese) | `--skill moyu-ja` |
+| `moyu-lite` | Lightweight, core rules only | `--skill moyu-lite` |
+| `moyu-strict` | Strict, stops at L1 for confirmation | `--skill moyu-strict` |
 
 > **Tip**: Moyu and PUA can be installed together — they don't conflict. PUA sets the floor, Moyu sets the ceiling.
 
@@ -188,6 +213,8 @@ Moyu and [PUA](https://github.com/tanweai/pua) solve opposite problems:
 | Cline | ✅ |
 | Kiro (AWS) | ✅ |
 | CodeBuddy (Tencent) | ✅ |
+| Google Antigravity | ✅ |
+| OpenCode | ✅ |
 
 ---
 

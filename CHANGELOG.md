@@ -1,5 +1,18 @@
 # Changelog
 
+## v1.1.0 (2026-03-23)
+
+### Added
+- 3 new skill variants: `moyu-lite` (lightweight), `moyu-strict` (team enforcement), `moyu-ja` (Japanese)
+- 2 new platforms: Google Antigravity, OpenCode (10 platforms total)
+- Quick-install command at top of README
+- Usage section with per-platform activation guide
+- Benchmark results with 6 controlled experiments (66% code reduction)
+
+### Changed
+- Consolidated install section (Claude Code / Codex / Kiro / CodeBuddy / Antigravity / OpenCode share same format)
+- Added Japanese to supported languages
+
 ## v1.0.0 (2026-03-19)
 
 ### Added
