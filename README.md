@@ -260,17 +260,23 @@ curl -o .codebuddy/skills/moyu/SKILL.md https://raw.githubusercontent.com/uucz/m
 
 ---
 
-## 与 PUA 搭配使用
+## AI 编程三大流派
 
-摸鱼和 [PUA](https://github.com/tanweai/pua) 解决的是相反的问题：
+AI Agent Skill 生态中出现了三种截然不同的方法论：
 
-| | PUA | 摸鱼 |
-|---|---|---|
-| 解决什么 | AI 做太少（偷懒、放弃） | AI 做太多（过度工程、加戏） |
-| 方法 | 施压、要求坚持 | 克制、要求精简 |
-| 像谁 | 严厉的老板 | 有经验的 tech lead |
+| | [PUA](https://github.com/tanweai/pua) | [NoPUA](https://github.com/wuji-labs/nopua) | 摸鱼 |
+|---|---|---|---|
+| 解决什么 | AI 做太少（偷懒、放弃） | PUA 让 AI 撒谎、隐瞒 | AI 做太多（过度工程、加戏） |
+| 方法 | 施压、要求坚持 | 信任、用爱驱动 | 克制、要求精简 |
+| 改变的是 | **动力**（做不做） | **驱动力**（为什么做） | **范围**（做多少） |
+| 像谁 | 严厉的老板 | 温和的导师 | 有经验的 tech lead |
 
-**两个都装，效果最佳。** PUA 保证下限（不偷懒），摸鱼保证上限（不加戏）。
+三者解决不同维度的问题，**互不冲突，可以组合使用**：
+
+- PUA / NoPUA 管"做不做"和"为什么做"（选一个）
+- **摸鱼管"做多少"**（跟任何一个搭配）
+
+> 推荐组合：`NoPUA + 摸鱼` 或 `PUA + 摸鱼`
 
 ---
 

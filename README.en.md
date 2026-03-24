@@ -258,17 +258,23 @@ You can also activate it manually:
 
 ---
 
-## Works with PUA
+## Three Schools of AI Coding
 
-Moyu and [PUA](https://github.com/tanweai/pua) solve opposite problems:
+Three distinct methodologies have emerged in the AI Agent Skill ecosystem:
 
-| | PUA | Moyu |
-|---|---|---|
-| Solves | AI does too little (lazy, gives up) | AI does too much (over-engineers) |
-| Method | Pressure, demand persistence | Restraint, demand precision |
-| Persona | Strict boss | Experienced tech lead |
+| | [PUA](https://github.com/tanweai/pua) | [NoPUA](https://github.com/wuji-labs/nopua) | Moyu |
+|---|---|---|---|
+| Solves | AI does too little (lazy, gives up) | PUA makes AI lie and hide problems | AI does too much (over-engineers) |
+| Method | Pressure, demand persistence | Trust, love-driven | Restraint, demand precision |
+| Changes | **Motivation** (whether to do it) | **Drive** (why to do it) | **Scope** (how much to do) |
+| Persona | Strict boss | Gentle mentor | Experienced tech lead |
 
-**Install both for best results.** PUA sets the floor (don't slack). Moyu sets the ceiling (don't over-do).
+They solve different dimensions and **don't conflict — combine them**:
+
+- PUA / NoPUA control "whether" and "why" (pick one)
+- **Moyu controls "how much"** (pairs with either)
+
+> Recommended: `NoPUA + Moyu` or `PUA + Moyu`
 
 ---
 
