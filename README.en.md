@@ -22,9 +22,9 @@
   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="MIT"></a>
 </p>
 
-**PUA makes your AI work overtime. Moyu teaches it when to clock out.**
+**Make your AI grind. So you don't have to.**
 
-Your AI is grinding. It needs to learn the art of Moyu.
+You thought AI would set you free? It wrote 200 lines. You spent 2 hours reviewing. The AI worked overtime — and so did you.
 
 ```bash
 claude skill install --url https://github.com/uucz/moyu --skill moyu-en
@@ -47,7 +47,7 @@ Does your AI coding assistant do this:
 - Write try-catch blocks for scenarios that can never happen?
 - Generate a full test suite nobody requested?
 
-**Your AI is a grinder. It needs to learn Moyu.**
+**None of these are the AI's problem — they're yours.** You review the code, untangle the abstractions, maintain the dependencies. The AI spent 30 extra minutes showing off. You spent 2 extra hours cleaning up.
 
 ### See the Difference
 
@@ -123,12 +123,12 @@ Complete functionality, zero extras. **81% less code.**
 > The best PR is the smallest PR.
 > A true Staff Engineer knows what NOT to do.
 
-**Moyu is not laziness — it's restraint.** The wisdom of knowing what not to do.
+**Moyu doesn't make your AI lazy — it stops your AI from doing useless work.** So you can actually slack off.
 
-- PUA stops AI from giving up (fixes doing too little)
-- **Moyu stops AI from over-engineering (fixes doing too much)**
+- PUA makes AI grind hard (fixes doing too little)
+- **Moyu stops AI from doing useless work (fixes doing too much)**
 
-They complement each other.
+Combined = AI works 996, you clock out on time.
 
 ---
 
@@ -293,6 +293,19 @@ They solve different dimensions and **don't conflict — combine them**:
 
 > Recommended: `NoPUA + Moyu` or `PUA + Moyu`
 
+### The Ultimate Setup
+
+| Config | How AI works | How you live |
+|--------|-------------|-------------|
+| Nothing installed | Gives up halfway | You finish the job yourself |
+| PUA only | Never gives up, writes 200 lines of bloat | You review until midnight |
+| Moyu only | Clean and efficient, occasionally too passive | You nudge it sometimes |
+| **PUA + Moyu** | **Never gives up + writes only what's needed** | **You clock out on time** |
+
+> On the surface, you're casually chatting with AI.
+> Behind the scenes, multiple instances are grinding through your backlog.
+> Your AI's 996 pays for your work-life balance.
+
 ---
 
 ## Supported Platforms
@@ -377,5 +390,5 @@ Contributions welcome! You can:
 <p align="center">
   <i>Restraint is not inability. Restraint is the highest form of engineering skill.</i><br>
   <i>Knowing what NOT to do is harder than knowing how to do it.</i><br>
-  <i>This is the art of Moyu.</i>
+  <i>The ultimate Moyu: your AI works overtime, you clock out on time.</i>
 </p>

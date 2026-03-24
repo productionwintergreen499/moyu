@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.3.0 (2026-03-23)
+
+### Changed
+- Narrative repositioning: "摸鱼" subject shifted from AI to human
+- Tagline, opening hook, philosophy, and three schools sections rewritten
+- Hero SVG subtitle updated
+- GitHub description updated
+- Added "Ultimate Setup" combination table to Three Schools section
+
 ## v1.2.0 (2026-03-24)
 
 ### Added

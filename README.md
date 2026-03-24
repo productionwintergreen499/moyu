@@ -22,9 +22,9 @@
   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="MIT"></a>
 </p>
 
-**PUA 让你的 AI 996，摸鱼让你的 AI 准时下班。**
+**狠狠 PUA 你的 AI，然后自己准时下班。**
 
-你的 AI 在内卷。它需要学会摸鱼。
+你以为有了 AI 就能摸鱼？结果它写了 200 行，你 review 了 2 小时。AI 加了班，你也加了班。
 
 ```bash
 claude skill install --url https://github.com/uucz/moyu --skill moyu
@@ -47,7 +47,7 @@ claude skill install --url https://github.com/uucz/moyu --skill moyu
 - 为不可能发生的场景写了一堆 try-catch？
 - 没人问就写了一整套测试？
 
-**你的 AI 是个卷王。它需要学会摸鱼。**
+**每一条都不是 AI 的问题——是你的问题。** 你得 review 这些代码，理解这些抽象，维护这些依赖。AI 加了 30 分钟的戏，你多加了 2 小时的班。
 
 ### 看看差距
 
@@ -123,12 +123,12 @@ def bulk_complete(ids):
 > 最好的 PR 是最小的 PR。
 > 真正的 Staff Engineer 知道什么不该做。
 
-**摸鱼不是偷懒，是克制。** 是知道什么不该做的智慧。
+**摸鱼不是让 AI 偷懒——是让 AI 不做废活，这样你才能真正摸鱼。**
 
-- PUA 让 AI 不放弃（解决做太少）
-- **摸鱼让 AI 知道什么时候该停（解决做太多）**
+- PUA 让 AI 拼命干（解决做太少）
+- **摸鱼让 AI 不干废活（解决做太多）**
 
-两者互补，不冲突。
+两者叠加 = AI 高效 996，你准时下班。
 
 ---
 
@@ -295,6 +295,18 @@ AI Agent Skill 生态中出现了三种截然不同的方法论：
 
 > 推荐组合：`NoPUA + 摸鱼` 或 `PUA + 摸鱼`
 
+### 真正的终极形态
+
+| 配置 | AI 怎么干 | 你怎么过 |
+|------|---------|---------|
+| 什么都不装 | 写一半放弃 | 你自己写完，加班 |
+| 只装 PUA | 不放弃，但写 200 行废话 | review 到天亮 |
+| 只装 Moyu | 精简高效，但偶尔不够主动 | 偶尔要催一催 |
+| **PUA + Moyu** | **不放弃 + 只写必要的** | **你准时下班** |
+
+> 表面上和 AI 一起摸鱼闲聊，背地里开着好几个后台让 AI 疯狂处理任务。
+> 用 AI 的 996，来守护你的准时下班。
+
 ---
 
 ## 支持平台
@@ -379,5 +391,5 @@ AI Agent Skill 生态中出现了三种截然不同的方法论：
 <p align="center">
   <i>克制不是无能。克制是最高形式的工程能力。</i><br>
   <i>知道什么不该做，比知道怎么做更难。</i><br>
-  <i>这就是摸鱼的艺术。</i>
+  <i>最高级的摸鱼——AI 在加班，你在准时下班。</i>
 </p>
