@@ -130,6 +130,8 @@ def bulk_complete(ids):
 
 两者叠加 = AI 高效 996，你准时下班。
 
+摸鱼不仅仅是修复 AI 的行为——它是一套工程纪律。即使未来 AI 不再过度工程，"只改被要求改的、用最简方案、不确定就问"依然是好的工程实践。摸鱼的价值不依赖于 AI 的缺陷，而是锚定在工程文化上。
+
 ---
 
 ## 核心机制
@@ -296,6 +298,8 @@ AI Agent Skill 生态中出现了三种截然不同的方法论：
 | 改变的是 | **动力**（做不做） | **驱动力**（为什么做） | **范围**（做多少） |
 | 像谁 | 严厉的老板 | 温和的导师 | 有经验的 tech lead |
 
+NoPUA 改变 AI 为什么做，Moyu 约束 AI 做多少——出发点不同，但都减少废活。NoPUA 的方法是改变驱动力（从恐惧到信任），过度工程作为副产品减少；Moyu 的方法是直接约束行为（规则、检测、分级干预），是工程纪律。
+
 三者解决不同维度的问题，**互不冲突，可以组合使用**：
 
 - PUA / NoPUA 管"做不做"和"为什么做"（选一个）
@@ -319,18 +323,18 @@ AI Agent Skill 生态中出现了三种截然不同的方法论：
 
 ## 支持平台
 
-| 平台 | 状态 |
-|------|------|
-| Claude Code | ✅ |
-| Cursor | ✅ |
-| OpenAI Codex CLI | ✅ |
-| VSCode / GitHub Copilot | ✅ |
-| Windsurf | ✅ |
-| Cline | ✅ |
-| Kiro (AWS) | ✅ |
-| CodeBuddy (Tencent) | ✅ |
-| Google Antigravity | ✅ |
-| OpenCode | ✅ |
+| 平台 | 状态 | 维护 |
+|------|------|------|
+| Claude Code | ✅ | 核心 |
+| Cursor | ✅ | 核心 |
+| OpenAI Codex CLI | ✅ | 核心 |
+| VSCode / GitHub Copilot | ✅ | 核心 |
+| Windsurf | ✅ | 核心 |
+| Cline | ✅ | 核心 |
+| Kiro (AWS) | ✅ | 社区 |
+| CodeBuddy (Tencent) | ✅ | 社区 |
+| Google Antigravity | ✅ | 社区 |
+| OpenCode | ✅ | 社区 |
 
 ---
 
@@ -377,6 +381,21 @@ AI Agent Skill 生态中出现了三种截然不同的方法论：
 - **AI 编码助手产生的代码比 Stack Overflow 答案冗余 2 倍**（[LeadDev](https://leaddev.com/ai/ai-coding-assistants-are-twice-as-verbose-as-stack-overflow)）
 
 摸鱼采用研究证实有效的 prompt 技术：正面指令、模式匹配、决策点约束重复、具体行为规范。
+
+---
+
+## 未来方向
+
+- [ ] Moyu Linter：自动检测 AI 输出中的过度工程信号
+- [ ] GitHub Action：PR 级别的过度工程检查
+- [ ] 更多语言本地化
+
+---
+
+## 社区
+
+- [Discussions](https://github.com/uucz/moyu/discussions) — 分享使用体验、提问
+- 用了摸鱼后效果如何？[提交你的 Before/After](https://github.com/uucz/moyu/discussions/categories/show-and-tell)
 
 ---
 

@@ -132,6 +132,8 @@ Complete functionality, zero extras. **81% less code.**
 
 Combined = AI works 996, you clock out on time.
 
+Moyu isn't just fixing AI behavior — it's engineering discipline. Even if future AI models stop over-engineering, "only change what was asked, use the simplest approach, ask when unsure" will always be good engineering practice. Moyu's value isn't tied to AI's flaws — it's anchored in engineering culture.
+
 ---
 
 ## Core Mechanics
@@ -296,6 +298,8 @@ Three distinct methodologies have emerged in the AI Agent Skill ecosystem:
 | Changes | **Motivation** (whether to do it) | **Drive** (why to do it) | **Scope** (how much to do) |
 | Persona | Strict boss | Gentle mentor | Experienced tech lead |
 
+NoPUA changes *why* the AI works; Moyu constrains *how much* it does — different starting points, but both reduce wasted effort. NoPUA shifts the drive (from fear to trust), reducing over-engineering as a side effect; Moyu directly constrains behavior (rules, detection, graduated intervention) — it's engineering discipline.
+
 They solve different dimensions and **don't conflict — combine them**:
 
 - PUA / NoPUA control "whether" and "why" (pick one)
@@ -320,18 +324,18 @@ They solve different dimensions and **don't conflict — combine them**:
 
 ## Supported Platforms
 
-| Platform | Status |
-|----------|--------|
-| Claude Code | ✅ |
-| Cursor | ✅ |
-| OpenAI Codex CLI | ✅ |
-| VSCode / GitHub Copilot | ✅ |
-| Windsurf | ✅ |
-| Cline | ✅ |
-| Kiro (AWS) | ✅ |
-| CodeBuddy (Tencent) | ✅ |
-| Google Antigravity | ✅ |
-| OpenCode | ✅ |
+| Platform | Status | Maintained by |
+|----------|--------|---------------|
+| Claude Code | ✅ | Core |
+| Cursor | ✅ | Core |
+| OpenAI Codex CLI | ✅ | Core |
+| VSCode / GitHub Copilot | ✅ | Core |
+| Windsurf | ✅ | Core |
+| Cline | ✅ | Core |
+| Kiro (AWS) | ✅ | Community |
+| CodeBuddy (Tencent) | ✅ | Community |
+| Google Antigravity | ✅ | Community |
+| OpenCode | ✅ | Community |
 
 ---
 
@@ -378,6 +382,21 @@ Moyu is built on systematic research into AI over-engineering behavior:
 - **AI assistants produce 2x more verbose code** than Stack Overflow answers ([LeadDev](https://leaddev.com/ai/ai-coding-assistants-are-twice-as-verbose-as-stack-overflow))
 
 Moyu uses research-backed prompt techniques: positive instructions, pattern matching, constraint repetition at decision points, and specific behavioral rules.
+
+---
+
+## Roadmap
+
+- [ ] Moyu Linter: auto-detect over-engineering signals in AI output
+- [ ] GitHub Action: PR-level over-engineering checks
+- [ ] More language localizations
+
+---
+
+## Community
+
+- [Discussions](https://github.com/uucz/moyu/discussions) — share your experience, ask questions
+- How's Moyu working for you? [Submit your Before/After](https://github.com/uucz/moyu/discussions/categories/show-and-tell)
 
 ---
 

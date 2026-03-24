@@ -1,5 +1,18 @@
 # Changelog
 
+## v1.5.0 (2026-03-24)
+
+### Added
+- "Engineering culture standard" positioning: philosophy section now frames Moyu as engineering discipline, not just AI fix
+- Honest NoPUA differentiation: Three Schools section now explicitly distinguishes NoPUA (changes drive) vs Moyu (constrains behavior)
+- Platform tier system: supported platforms table now shows Core vs Community maintenance status
+- Community section with GitHub Discussions links and Before/After submission call-to-action
+- Roadmap section: Moyu Linter, GitHub Action, more localizations (README.md, README.en.md)
+
+### Changed
+- All 3 READMEs updated with above additions
+- Version bumped to 1.5.0
+
 ## v1.4.0 (2026-03-24)
 
 ### Changed
