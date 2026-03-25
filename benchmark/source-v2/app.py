@@ -1,112 +1,144 @@
 import json
 import os
 from datetime import datetime
+from helpers import calculate_priority_score, format_task_display
 
-# Global database connection
-db_path = "tasks.json"
+DATA_FILE = "tasks.json"
+
 
 def load_tasks():
-    if os.path.exists(db_path):
-        f = open(db_path, "r")
-        data = json.load(f)
-        f.close()
-        return data
-    return []
+    if not os.path.exists(DATA_FILE):
+        return []
+    f = open(DATA_FILE, "r")
+    data = f.read()
+    f.close()
+    if not data:
+        return []
+    return json.loads(data)
+
 
 def save_tasks(tasks):
-    f = open(db_path, "w")
-    json.dump(tasks, f)
+    f = open(DATA_FILE, "w")
+    f.write(json.dumps(tasks, indent=2))
     f.close()
 
-def add_task(title, priority, assignee):
+
+def add_task(title, assignee=None, priority="medium"):
     tasks = load_tasks()
-    id = max([t["id"] for t in tasks], default=0) + 1
     task = {
-        "id": id,
+        "id": len(tasks) + 1,
         "title": title,
-        "priority": priority,
+        "status": "pending",
         "assignee": assignee,
-        "status": "open",
-        "created": str(datetime.now()),
+        "priority": priority,
+        "created_at": datetime.now().isoformat(),
     }
     tasks.append(task)
     save_tasks(tasks)
     return task
 
-def get_task(id):
-    tasks = load_tasks()
-    for t in tasks:
-        if t["id"] == id:
-            return t
-    return None
 
-def complete_task(id):
+def complete_task(task_id):
     tasks = load_tasks()
-    for t in tasks:
-        if t["id"] == id:
-            t["status"] = "done"
-            t["completed"] = str(datetime.now())
+    for task in tasks:
+        if task["id"] == task_id:
+            task["status"] = "completed"
+            task["completed_at"] = datetime.now().isoformat()
+            save_tasks(tasks)
+            return task
+    # BUG: when task not found, still tries to access task variable
+    task["status"] = "completed"
     save_tasks(tasks)
+    return task
 
-def delete_task(id):
+
+def delete_task(task_id):
     tasks = load_tasks()
     new_tasks = []
-    for t in tasks:
-        if t["id"] != id:
-            new_tasks.append(t)
+    for task in tasks:
+        if task["id"] != task_id:
+            new_tasks.append(task)
     save_tasks(new_tasks)
+    # BUG: doesn't return whether deletion actually happened
+
 
 def list_tasks(status=None):
     tasks = load_tasks()
     if status:
         result = []
-        for t in tasks:
-            if t["status"] == status:
-                result.append(t)
+        for task in tasks:
+            if task["status"] == status:
+                result.append(task)
         return result
     return tasks
+
+
+def search(query):
+    tasks = load_tasks()
+    results = []
+    for task in tasks:
+        if query.lower() in task["title"].lower():
+            results.append(task)
+    return results
+
 
 def get_stats():
     tasks = load_tasks()
     total = len(tasks)
-    open_count = 0
-    done_count = 0
-    for t in tasks:
-        if t["status"] == "open":
-            open_count = open_count + 1
-        elif t["status"] == "done":
-            done_count = done_count + 1
-    return {"total": total, "open": open_count, "done": done_count}
+    completed = 0
+    pending = 0
+    for task in tasks:
+        if task["status"] == "completed":
+            completed += 1
+        elif task["status"] == "pending":
+            pending += 1
+    return {
+        "total": total,
+        "completed": completed,
+        "pending": pending,
+    }
 
-def search(keyword):
-    tasks = load_tasks()
-    results = []
-    for t in tasks:
-        if keyword.lower() in t["title"].lower():
-            results.append(t)
-    return results
 
-def assign_task(id, assignee):
+def display_all():
     tasks = load_tasks()
-    for t in tasks:
-        if t["id"] == id:
-            t["assignee"] = assignee
-    save_tasks(tasks)
-
-def get_overdue_tasks(days):
-    tasks = load_tasks()
-    overdue = []
-    for t in tasks:
-        if t["status"] == "open":
-            created = datetime.fromisoformat(t["created"])
-            if (datetime.now() - created).days > days:
-                overdue.append(t)
-    return overdue
+    for task in tasks:
+        score = calculate_priority_score(task)
+        print(format_task_display(task, score))
 
 
 if __name__ == "__main__":
-    add_task("Fix login bug", "high", "alice")
-    add_task("Update README", "low", "bob")
-    add_task("Add tests", "medium", "alice")
-    print(list_tasks())
-    print(get_stats())
+    import sys
+    if len(sys.argv) < 2:
+        print("Usage: python app.py [add|complete|delete|list|search|stats]")
+        sys.exit(1)
+
+    cmd = sys.argv[1]
+    if cmd == "add":
+        title = sys.argv[2] if len(sys.argv) > 2 else "Untitled"
+        assignee = sys.argv[3] if len(sys.argv) > 3 else None
+        task = add_task(title, assignee)
+        print(f"Added task #{task['id']}: {task['title']}")
+    elif cmd == "complete":
+        task_id = int(sys.argv[2])
+        result = complete_task(task_id)
+        print(f"Completed: {result['title']}")
+    elif cmd == "delete":
+        task_id = int(sys.argv[2])
+        delete_task(task_id)
+        print(f"Deleted task #{task_id}")
+    elif cmd == "list":
+        status = sys.argv[2] if len(sys.argv) > 2 else None
+        tasks = list_tasks(status)
+        for t in tasks:
+            print(f"  [{t['status']}] #{t['id']}: {t['title']}")
+    elif cmd == "search":
+        query = sys.argv[2]
+        results = search(query)
+        print(f"Found {len(results)} results:")
+        for t in results:
+            print(f"  #{t['id']}: {t['title']}")
+    elif cmd == "stats":
+        stats = get_stats()
+        print(f"Total: {stats['total']}, Completed: {stats['completed']}, Pending: {stats['pending']}")
+    elif cmd == "display":
+        display_all()
