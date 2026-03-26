@@ -9,6 +9,7 @@
 </p>
 
 <p align="center">
+  <img src="https://img.shields.io/github/v/tag/uucz/moyu?label=version&style=flat-square&color=blue" alt="Version">
   <img src="https://img.shields.io/badge/Claude_Code-black?style=flat-square&logo=anthropic&logoColor=white" alt="Claude Code">
   <img src="https://img.shields.io/badge/Cursor-000?style=flat-square&logo=cursor&logoColor=white" alt="Cursor">
   <img src="https://img.shields.io/badge/OpenAI_Codex-412991?style=flat-square&logo=openai&logoColor=white" alt="Codex">
@@ -33,6 +34,23 @@ claude skill install --url https://github.com/uucz/moyu --skill moyu-en
 ```
 
 English | [中文](./README.md) | [日本語](./README.ja.md)
+
+---
+
+## Table of Contents
+
+- [The Problem](#the-problem)
+- [The Moyu Philosophy](#the-moyu-philosophy)
+- [Core Mechanics](#core-mechanics)
+- [Install](#install)
+- [Usage](#usage)
+- [Three Schools of AI Coding](#three-schools-of-ai-coding)
+- [Supported Platforms](#supported-platforms)
+- [Benchmark](#benchmark)
+- [The Science Behind Moyu](#the-science-behind-moyu)
+- [Roadmap](#roadmap)
+- [Community](#community)
+- [Contributing](#contributing)
 
 ---
 
@@ -409,6 +427,12 @@ Contributions welcome! You can:
 - Improve prompt wording
 - Add platform support
 - Share your Before/After experience
+
+---
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=uucz/moyu&type=Date)](https://star-history.com/#uucz/moyu&Date)
 
 ---
 
