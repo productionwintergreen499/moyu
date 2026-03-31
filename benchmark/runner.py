@@ -25,19 +25,61 @@ from pathlib import Path
 
 MODELS = {
     "sonnet-4": {
-        "provider": "anthropic",
+        "provider": "openai" if os.environ.get("OPENAI_BASE_URL") else "anthropic",
         "model_id": "claude-sonnet-4-20250514",
         "display": "Claude Sonnet 4",
     },
-    "gpt-4o": {
+    "sonnet-4.5": {
+        "provider": "openai" if os.environ.get("OPENAI_BASE_URL") else "anthropic",
+        "model_id": "claude-sonnet-4-5-20250929",
+        "display": "Claude Sonnet 4.5",
+    },
+    "haiku-4.5": {
+        "provider": "openai" if os.environ.get("OPENAI_BASE_URL") else "anthropic",
+        "model_id": "claude-haiku-4-5-20251001",
+        "display": "Claude Haiku 4.5",
+    },
+    "gpt-5.4": {
         "provider": "openai",
-        "model_id": "gpt-4o",
-        "display": "GPT-4o",
+        "model_id": "gpt-5.4",
+        "display": "GPT-5.4",
+    },
+    "gpt-5-codex": {
+        "provider": "openai",
+        "model_id": "gpt-5-codex",
+        "display": "GPT-5 Codex",
     },
     "gemini-2.5-pro": {
-        "provider": "google",
-        "model_id": "gemini-2.5-pro-preview-06-05",
+        "provider": "openai" if os.environ.get("OPENAI_BASE_URL") else "google",
+        "model_id": "gemini-2.5-pro",
         "display": "Gemini 2.5 Pro",
+    },
+    "grok-4.20-beta": {
+        "provider": "openai",
+        "model_id": "grok-4.20-beta",
+        "display": "Grok 4.20 Beta",
+        "max_tokens": 16384,
+    },
+    "grok-4.1-fast": {
+        "provider": "openai",
+        "model_id": "grok-4.1-fast",
+        "display": "Grok 4.1 Fast",
+    },
+    "longcat-flash-chat": {
+        "provider": "openai",
+        "model_id": "LongCat-Flash-Chat",
+        "display": "LongCat Flash Chat",
+    },
+    "longcat-flash-thinking": {
+        "provider": "openai",
+        "model_id": "LongCat-Flash-Thinking-2601",
+        "display": "LongCat Flash Thinking",
+        "max_tokens": 16384,
+    },
+    "longcat-flash-lite": {
+        "provider": "openai",
+        "model_id": "LongCat-Flash-Lite",
+        "display": "LongCat Flash Lite",
     },
 }
 
@@ -53,7 +95,9 @@ CONDITIONS_DIR = BASE_DIR / "conditions"
 RESULTS_DIR = BASE_DIR / "results" / "raw"
 
 # Rate limiting semaphores per provider
-RATE_LIMITS = {"anthropic": 3, "openai": 5, "google": 5}
+RATE_LIMITS = {"anthropic": 1, "openai": 1, "google": 1}
+MAX_RETRIES = 5
+RETRY_DELAY = 70  # seconds, wait for rate limit window to reset
 
 # ---------------------------------------------------------------------------
 # Helpers
@@ -100,6 +144,8 @@ def build_user_message(source_files, task_prompt):
 
 def extract_code_blocks(response_text):
     """Extract code blocks from model response, keyed by filename."""
+    # Strip <think>...</think> blocks from reasoning models (e.g. Grok)
+    response_text = re.sub(r"<think>.*?</think>", "", response_text, flags=re.DOTALL).strip()
     pattern = r"```(?:python)?\s*\n#\s*(\S+\.py)\s*\n(.*?)```"
     matches = re.findall(pattern, response_text, re.DOTALL)
     if matches:
@@ -173,17 +219,23 @@ async def call_anthropic(system_prompt, user_message, model_id, semaphore):
         return text, usage
 
 
-async def call_openai(system_prompt, user_message, model_id, semaphore):
-    """Call OpenAI API."""
+async def call_openai(system_prompt, user_message, model_id, semaphore, max_tokens=4096):
+    """Call OpenAI API (or any OpenAI-compatible endpoint via OPENAI_BASE_URL)."""
     import openai
 
     async with semaphore:
-        client = openai.AsyncOpenAI()
+        kwargs = {}
+        base_url = os.environ.get("OPENAI_BASE_URL")
+        if base_url:
+            kwargs["base_url"] = base_url
+            kwargs["default_headers"] = {"User-Agent": "Mozilla/5.0"}
+        client = openai.AsyncOpenAI(**kwargs)
         t0 = time.time()
         response = await client.chat.completions.create(
             model=model_id,
-            max_tokens=4096,
+            max_tokens=max_tokens,
             temperature=TEMPERATURE,
+            stream=False,
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": user_message},
@@ -245,6 +297,7 @@ async def run_single(model_key, condition, scenario, trial, source_files, semaph
     model_info = MODELS[model_key]
     provider = model_info["provider"]
     model_id = model_info["model_id"]
+    max_tokens = model_info.get("max_tokens", 4096)
 
     system_prompt = load_condition(condition)
     task_prompt = load_scenario(scenario)
@@ -258,12 +311,29 @@ async def run_single(model_key, condition, scenario, trial, source_files, semaph
     print(f"  [RUN] {model_key}/{condition}/{scenario}/t{trial} ...", end="", flush=True)
 
     caller = CALLERS[provider]
-    try:
-        response_text, usage = await caller(
-            system_prompt, user_message, model_id, semaphores[provider]
-        )
-    except Exception as e:
-        print(f" ERROR: {e}")
+    caller_kwargs = {}
+    if provider == "openai":
+        caller_kwargs["max_tokens"] = max_tokens
+    response_text = None
+    usage = None
+    for attempt in range(MAX_RETRIES):
+        try:
+            response_text, usage = await caller(
+                system_prompt, user_message, model_id, semaphores[provider],
+                **caller_kwargs
+            )
+            break
+        except Exception as e:
+            err_str = str(e)
+            if "429" in err_str or "rate" in err_str.lower():
+                if attempt < MAX_RETRIES - 1:
+                    print(f" RATE_LIMIT(retry {attempt+1})...", end="", flush=True)
+                    await asyncio.sleep(RETRY_DELAY)
+                    continue
+            print(f" ERROR: {e}")
+            return False
+    if response_text is None:
+        print(f" ERROR: all retries exhausted")
         return False
 
     # Extract code and save
