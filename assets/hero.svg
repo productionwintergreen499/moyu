@@ -1,10 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" fill="none">
   <defs>
-    <linearGradient id="fish-grad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#e08a6a"/>
-      <stop offset="100%" stop-color="#c96a47"/>
-    </linearGradient>
-    <radialGradient id="glow" cx="32%" cy="50%" r="35%">
+    <radialGradient id="glow" cx="28%" cy="50%" r="30%">
       <stop offset="0%" stop-color="#d97757" stop-opacity="0.08"/>
       <stop offset="100%" stop-color="#141413" stop-opacity="0"/>
     </radialGradient>
@@ -18,59 +14,210 @@
     <rect width="800" height="300" fill="#141413"/>
     <rect width="800" height="300" fill="url(#glow)"/>
 
-    <!-- ===== LEFT: FISH MARK ===== -->
-    <g transform="translate(240, 150) scale(1.8)">
-      <!-- Shadow / depth -->
-      <ellipse cx="4" cy="4" rx="36" ry="20" fill="#000" opacity="0.15"/>
+    <!-- ===== LEFT: PIXEL FISH ===== -->
+    <g transform="translate(155, 80) scale(2.2)">
 
-      <!-- Fish body — smooth, organic -->
-      <path d="M-36 0 C-28 -22, 8 -24, 30 -10 C38 -4, 38 4, 30 10 C8 24, -28 22, -36 0Z"
-            fill="url(#fish-grad)"/>
+      <!-- Tail fin -->
+      <g fill="#c96a47">
+        <rect x="0" y="16" width="5" height="5"/>
+        <rect x="-5" y="21" width="5" height="5"/>
+        <rect x="0" y="21" width="5" height="5"/>
+        <rect x="-5" y="26" width="5" height="5"/>
+        <rect x="0" y="26" width="5" height="5"/>
+        <rect x="-5" y="31" width="5" height="5"/>
+        <rect x="0" y="31" width="5" height="5"/>
+        <rect x="-5" y="36" width="5" height="5"/>
+        <rect x="0" y="36" width="5" height="5"/>
+        <rect x="0" y="41" width="5" height="5"/>
+      </g>
 
-      <!-- Tail -->
-      <path d="M-34 0 L-52 -18 L-42 0 L-52 18 Z" fill="#d97757" opacity="0.6"/>
+      <!-- Fish body -->
+      <g fill="#d97757">
+        <!-- Row 1 -->
+        <rect x="25" y="6" width="5" height="5"/>
+        <rect x="30" y="6" width="5" height="5"/>
+        <rect x="35" y="6" width="5" height="5"/>
+        <!-- Row 2 -->
+        <rect x="15" y="11" width="5" height="5"/>
+        <rect x="20" y="11" width="5" height="5"/>
+        <rect x="25" y="11" width="5" height="5"/>
+        <rect x="30" y="11" width="5" height="5"/>
+        <rect x="35" y="11" width="5" height="5"/>
+        <rect x="40" y="11" width="5" height="5"/>
+        <rect x="45" y="11" width="5" height="5"/>
+        <rect x="50" y="11" width="5" height="5"/>
+        <!-- Row 3 -->
+        <rect x="10" y="16" width="5" height="5"/>
+        <rect x="15" y="16" width="5" height="5"/>
+        <rect x="20" y="16" width="5" height="5"/>
+        <rect x="25" y="16" width="5" height="5"/>
+        <rect x="30" y="16" width="5" height="5"/>
+        <rect x="35" y="16" width="5" height="5"/>
+        <rect x="40" y="16" width="5" height="5"/>
+        <rect x="45" y="16" width="5" height="5"/>
+        <rect x="50" y="16" width="5" height="5"/>
+        <rect x="55" y="16" width="5" height="5"/>
+        <rect x="60" y="16" width="5" height="5"/>
+        <!-- Row 4 -->
+        <rect x="5" y="21" width="5" height="5"/>
+        <rect x="10" y="21" width="5" height="5"/>
+        <rect x="15" y="21" width="5" height="5"/>
+        <rect x="20" y="21" width="5" height="5"/>
+        <rect x="25" y="21" width="5" height="5"/>
+        <rect x="30" y="21" width="5" height="5"/>
+        <rect x="35" y="21" width="5" height="5"/>
+        <rect x="40" y="21" width="5" height="5"/>
+        <rect x="45" y="21" width="5" height="5"/>
+        <rect x="50" y="21" width="5" height="5"/>
+        <rect x="55" y="21" width="5" height="5"/>
+        <rect x="60" y="21" width="5" height="5"/>
+        <rect x="65" y="21" width="5" height="5"/>
+        <!-- Row 5 -->
+        <rect x="5" y="26" width="5" height="5"/>
+        <rect x="10" y="26" width="5" height="5"/>
+        <rect x="15" y="26" width="5" height="5"/>
+        <rect x="20" y="26" width="5" height="5"/>
+        <rect x="25" y="26" width="5" height="5"/>
+        <rect x="30" y="26" width="5" height="5"/>
+        <rect x="35" y="26" width="5" height="5"/>
+        <rect x="40" y="26" width="5" height="5"/>
+        <rect x="45" y="26" width="5" height="5"/>
+        <rect x="50" y="26" width="5" height="5"/>
+        <rect x="55" y="26" width="5" height="5"/>
+        <rect x="60" y="26" width="5" height="5"/>
+        <rect x="65" y="26" width="5" height="5"/>
+        <!-- Row 6 -->
+        <rect x="5" y="31" width="5" height="5"/>
+        <rect x="10" y="31" width="5" height="5"/>
+        <rect x="15" y="31" width="5" height="5"/>
+        <rect x="20" y="31" width="5" height="5"/>
+        <rect x="25" y="31" width="5" height="5"/>
+        <rect x="30" y="31" width="5" height="5"/>
+        <rect x="35" y="31" width="5" height="5"/>
+        <rect x="40" y="31" width="5" height="5"/>
+        <rect x="45" y="31" width="5" height="5"/>
+        <rect x="50" y="31" width="5" height="5"/>
+        <rect x="55" y="31" width="5" height="5"/>
+        <rect x="60" y="31" width="5" height="5"/>
+        <!-- Row 7 -->
+        <rect x="5" y="36" width="5" height="5"/>
+        <rect x="10" y="36" width="5" height="5"/>
+        <rect x="15" y="36" width="5" height="5"/>
+        <rect x="20" y="36" width="5" height="5"/>
+        <rect x="25" y="36" width="5" height="5"/>
+        <rect x="30" y="36" width="5" height="5"/>
+        <rect x="35" y="36" width="5" height="5"/>
+        <rect x="40" y="36" width="5" height="5"/>
+        <rect x="45" y="36" width="5" height="5"/>
+        <rect x="50" y="36" width="5" height="5"/>
+        <rect x="55" y="36" width="5" height="5"/>
+        <!-- Row 8 -->
+        <rect x="10" y="41" width="5" height="5"/>
+        <rect x="15" y="41" width="5" height="5"/>
+        <rect x="20" y="41" width="5" height="5"/>
+        <rect x="25" y="41" width="5" height="5"/>
+        <rect x="30" y="41" width="5" height="5"/>
+        <rect x="35" y="41" width="5" height="5"/>
+        <rect x="40" y="41" width="5" height="5"/>
+        <rect x="45" y="41" width="5" height="5"/>
+        <rect x="50" y="41" width="5" height="5"/>
+        <!-- Row 9 -->
+        <rect x="20" y="46" width="5" height="5"/>
+        <rect x="25" y="46" width="5" height="5"/>
+        <rect x="30" y="46" width="5" height="5"/>
+        <rect x="35" y="46" width="5" height="5"/>
+        <rect x="40" y="46" width="5" height="5"/>
+      </g>
 
-      <!-- Body highlight — gives volume -->
-      <path d="M-20 -6 C-10 -18, 16 -18, 28 -8 C30 -6, 20 -4, 6 -6 C-4 -8, -14 -6, -20 -6Z"
-            fill="#faf9f5" opacity="0.08"/>
+      <!-- Dorsal fin -->
+      <g fill="#c96a47">
+        <rect x="30" y="1" width="5" height="5"/>
+        <rect x="35" y="1" width="5" height="5"/>
+      </g>
+
+      <!-- Belly highlight -->
+      <g fill="#e8a882" opacity="0.5">
+        <rect x="20" y="36" width="5" height="5"/>
+        <rect x="25" y="36" width="5" height="5"/>
+        <rect x="30" y="36" width="5" height="5"/>
+        <rect x="35" y="36" width="5" height="5"/>
+        <rect x="40" y="36" width="5" height="5"/>
+        <rect x="25" y="41" width="5" height="5"/>
+        <rect x="30" y="41" width="5" height="5"/>
+        <rect x="35" y="41" width="5" height="5"/>
+      </g>
 
       <!-- Eye -->
-      <circle cx="18" cy="-5" r="5" fill="#141413"/>
-      <circle cx="19.5" cy="-6.5" r="2" fill="#faf9f5" opacity="0.9"/>
+      <rect x="50" y="16" width="10" height="10" fill="#faf9f5"/>
+      <rect x="55" y="16" width="5" height="5" fill="#141413"/>
+
+      <!-- Mouth -->
+      <rect x="60" y="31" width="5" height="5" fill="#c96a47"/>
+      <rect x="55" y="36" width="5" height="5" fill="#c96a47"/>
+
+      <!-- Pixel zzz -->
+      <g fill="#faf9f5" opacity="0.4">
+        <!-- z1 -->
+        <rect x="68" y="8" width="5" height="2"/>
+        <rect x="73" y="8" width="5" height="2"/>
+        <rect x="73" y="10" width="5" height="2"/>
+        <rect x="68" y="12" width="5" height="2"/>
+        <rect x="68" y="14" width="5" height="2"/>
+        <rect x="73" y="14" width="5" height="2"/>
+        <!-- z2 -->
+        <rect x="78" y="-1" width="4" height="2"/>
+        <rect x="82" y="-1" width="4" height="2"/>
+        <rect x="82" y="1" width="4" height="2"/>
+        <rect x="78" y="3" width="4" height="2"/>
+        <rect x="78" y="5" width="4" height="2"/>
+        <rect x="82" y="5" width="4" height="2"/>
+        <!-- z3 -->
+        <rect x="86" y="-8" width="3" height="2"/>
+        <rect x="89" y="-8" width="3" height="2"/>
+        <rect x="89" y="-6" width="3" height="2"/>
+        <rect x="86" y="-4" width="3" height="2"/>
+        <rect x="86" y="-2" width="3" height="2"/>
+        <rect x="89" y="-2" width="3" height="2"/>
+      </g>
+
+      <!-- Water bubbles -->
+      <g fill="#6a9bcc" opacity="0.3">
+        <rect x="68" y="42" width="3" height="3" rx="1"/>
+        <rect x="74" y="36" width="2" height="2" rx="1"/>
+      </g>
     </g>
 
     <!-- ===== RIGHT: TEXT ===== -->
 
     <!-- Title -->
-    <text x="420" y="118" font-family="'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', sans-serif"
+    <text x="440" y="118" font-family="'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', sans-serif"
           font-size="56" font-weight="700" fill="#faf9f5">摸鱼</text>
 
     <!-- Subtitle -->
-    <text x="422" y="150" font-family="Arial, Helvetica, sans-serif"
+    <text x="442" y="150" font-family="Arial, Helvetica, sans-serif"
           font-size="18" font-weight="400" fill="#d97757" letter-spacing="2">Moyu</text>
 
     <!-- Tagline -->
-    <text x="422" y="180" font-family="Georgia, serif"
+    <text x="442" y="180" font-family="Georgia, serif"
           font-size="13" fill="#b0aea5" font-style="italic">Make your AI grind. So you don't have to.</text>
 
     <!-- Stats row -->
-    <g transform="translate(422, 216)" font-family="Arial, Helvetica, sans-serif">
-      <text x="0" y="0" font-size="18" font-weight="700" fill="#d97757">−66%</text>
-      <text x="52" y="0" font-size="11" fill="#b0aea5">less code</text>
+    <g transform="translate(442, 216)" font-family="Arial, Helvetica, sans-serif">
+      <text x="0" y="0" font-size="18" font-weight="700" fill="#d97757">-47%</text>
+      <text x="46" y="0" font-size="11" fill="#b0aea5">less code</text>
 
-      <circle cx="118" cy="-3" r="1.2" fill="#e8e6dc" opacity="0.3"/>
+      <circle cx="112" cy="-3" r="1.2" fill="#e8e6dc" opacity="0.3"/>
 
-      <text x="130" y="0" font-size="18" font-weight="700" fill="#6a9bcc">10</text>
-      <text x="152" y="0" font-size="11" fill="#b0aea5">platforms</text>
+      <text x="124" y="0" font-size="18" font-weight="700" fill="#6a9bcc">12</text>
+      <text x="146" y="0" font-size="11" fill="#b0aea5">platforms</text>
 
-      <circle cx="218" cy="-3" r="1.2" fill="#e8e6dc" opacity="0.3"/>
+      <circle cx="212" cy="-3" r="1.2" fill="#e8e6dc" opacity="0.3"/>
 
-      <text x="230" y="0" font-size="18" font-weight="700" fill="#788c5d">5</text>
-      <text x="244" y="0" font-size="11" fill="#b0aea5">variants</text>
+      <text x="224" y="0" font-size="18" font-weight="700" fill="#788c5d">5</text>
+      <text x="238" y="0" font-size="11" fill="#b0aea5">languages</text>
     </g>
 
-    <!-- ===== BACKGROUND CONCEPT: code lines being reduced ===== -->
-    <!-- Left side: many lines (over-engineered) — very subtle -->
+    <!-- ===== BACKGROUND: code lines being reduced ===== -->
     <g opacity="0.04" stroke="#d97757" stroke-width="1" stroke-linecap="round">
       <line x1="56" y1="60" x2="150" y2="60"/>
       <line x1="56" y1="72" x2="136" y2="72"/>
@@ -89,7 +236,6 @@
       <line x1="56" y1="228" x2="155" y2="228"/>
     </g>
 
-    <!-- Right side: few lines (moyu) — subtle -->
     <g opacity="0.04" stroke="#788c5d" stroke-width="1" stroke-linecap="round">
       <line x1="660" y1="112" x2="740" y2="112"/>
       <line x1="660" y1="124" x2="725" y2="124"/>
