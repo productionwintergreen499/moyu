@@ -13,6 +13,10 @@
 </p>
 
 <p align="center">
+  <a href="./README.en.md">English</a> | 中文 | <a href="./README.ja.md">日本語</a> | <a href="./README.ko.md">한국어</a> | <a href="./README.fr.md">Français</a>
+</p>
+
+<p align="center">
   <img src="https://img.shields.io/github/v/tag/uucz/moyu?label=version&style=flat-square&color=blue" alt="Version">
   <img src="https://img.shields.io/badge/Claude_Code-black?style=flat-square&logo=anthropic&logoColor=white" alt="Claude Code">
   <img src="https://img.shields.io/badge/Cursor-000?style=flat-square&logo=cursor&logoColor=white" alt="Cursor">
@@ -34,8 +38,6 @@
 ```bash
 claude skill install --url https://github.com/uucz/moyu --skill moyu
 ```
-
-[English](./README.en.md) | 中文 | [日本語](./README.ja.md) | [한국어](./README.ko.md) | [Français](./README.fr.md)
 
 ---
 
